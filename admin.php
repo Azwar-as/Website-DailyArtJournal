@@ -34,9 +34,9 @@ body {
 
 <body>
     <!-- nav begin -->
-    <nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top bg-danger-subtle">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top bg-dark">
         <div class="container">
-            <a class="navbar-brand" target="_blank" href=".">My Daily Journal</a>
+            <a class="navbar-brand" target="_blank" href="."> Quiet Nightmare Art</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -51,7 +51,7 @@ body {
                         <a class="nav-link" href="admin.php?page=article">Article</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-danger fw-bold" href="#" role="button"
+                        <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <?= $_SESSION['username']?>
                         </a>
@@ -73,20 +73,20 @@ body {
                 $page = "dashboard";
             }
 
-            echo '<h4 class="lead display-6 pb-2 border-bottom border-danger-subtle">' . $page . '</h4>';
+            echo '<h4 class="lead display-6 pb-2 border-bottom border-dark-subtle">' . $page . '</h4>';
             include($page . ".php");
             ?>
         </div>
     </section>
     <!-- content end -->
     <!-- footer begin -->
-    <footer class="text-center p-3 bg-danger-subtle">
+    <footer class="text-center p-3 bg-dark-subtle">
         <div>
             <a href="https://www.instagram.com/udinusofficial"><i class="bi bi-instagram h2 p-2 text-dark"></i></a>
             <a href="https://twitter.com/udinusofficial"><i class="bi bi-twitter h2 p-2 text-dark"></i></a>
             <a href="https://wa.me/+62812685577"><i class="bi bi-whatsapp h2 p-2 text-dark"></i></a>
         </div>
-        <div>Aprilyani Nur Safitri &copy; 2023</div>
+        <div>M.Azwar Anshari &copy; 2023</div>
     </footer>
     <!-- footer end -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
