@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = md5($passInput);
 
     $stmt = $conn->prepare(" 
-    SELECT *FROM USER 
+    SELECT *FROM user
     WHERE username=? AND password=?");
 
     $stmt->bind_param("ss", $username, $password);

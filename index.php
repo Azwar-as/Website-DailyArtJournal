@@ -52,6 +52,9 @@ include "koneksi.php";
                     <li class="nav-item">
                         <a class="nav-link" href="#aboutme">About Me</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php" target="_blank">Login</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <button class="btn nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -94,7 +97,7 @@ include "koneksi.php";
         <section id="hero" class="text-center p-5 bg-secondary-subtle text-sm-start">
             <section class="container">
                 <div class="d-sm-flex flex-sm-row-reverse align-items-center">
-                    <img src="./assets/banner.jpg" class="img-fluid" width="300"
+                    <img src="./img/banner.jpg" class="img-fluid" width="300"
                         alt="lukisan patung peri dengan sentuhan warna hitam putih">
                     <div>
                         <h1 class="fw-bold display-4">
@@ -151,23 +154,23 @@ include "koneksi.php";
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="./assets/img1.jpg" height="500" class="object-fit-cover d-block w-100"
+                            <img src="./img/img1.jpg" height="500" class="object-fit-cover d-block w-100"
                                 alt="lukisan dengan judul Tepian ketiadaan">
                         </div>
                         <div class="carousel-item">
-                            <img src="./assets/img2.jpg" height="500" class="object-fit-cover d-block w-100"
+                            <img src="./img/img2.jpg" height="500" class="object-fit-cover d-block w-100"
                                 alt="Lukisan dengan judul Prosesi yang terlupakan ">
                         </div>
                         <div class="carousel-item">
-                            <img src="./assets/img3c.jpg" height="500" class="object-fit-cover d-block w-100"
+                            <img src="./img/img3c.jpg" height="500" class="object-fit-cover d-block w-100"
                                 alt="Lukisan dengan judul Segel Terlarang">
                         </div>
                         <div class="carousel-item">
-                            <img src="./assets/img4.jpg" height="500" class="object-fit-cover d-block w-100"
+                            <img src="./img/img4.jpg" height="500" class="object-fit-cover d-block w-100"
                                 alt="Lukisan dengan judul Dark Rimba Gotik">
                         </div>
                         <div class="carousel-item">
-                            <img src="./assets/img5.jpg" height="500" class="object-fit-cover d-block w-100"
+                            <img src="./img/img5.jpg" height="500" class="object-fit-cover d-block w-100"
                                 alt="Lukisan dengan judul Kekacauan batin">
                         </div>
                     </div>
@@ -190,75 +193,81 @@ include "koneksi.php";
         <section id="Schedule" class="text-center p-5">
             <div class="container">
                 <h1 class="fw-bold display-4 pb-3">Schedule</h1>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="row-cols-lg-4 row row-cols-1 row-cols-md-2 g-5 justify-content-between">
                     <div class="col">
-                        <div class="card text-center mb-3" style="width: 20rem;">
+                        <div class="card h-40">
+                            <div>
+                                <a href=""></a> <i class="bi bi-book h2 p-2 text-drak"></i>
+                            </div>
                             <div class="card-body">
-                                <i class="bi bi-book fs-1 text-body-secondary"></i>
                                 <h5 class="card-title">Membaca</h5>
-                                <p class="card-text text-secondary">With supporting text below as a natural lead-in
-                                    to additional
-                                    content.
+                                <p class="card-text">
+                                    Menambah wawasan setiap pagi sebelum beraktivitas
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card text-center mb-3" style="width: 20rem;">
+                        <div class="card h-40">
+                            <div>
+                                <a href=""></a> <i class="bi bi-laptop h2 p-2 text-drak"></i>
+                            </div>
                             <div class="card-body">
-                                <i class="bi bi-laptop fs-1 text-body-secondary"></i>
                                 <h5 class="card-title">Menulis</h5>
-                                <p class="card-text text-secondary">With supporting text below as a natural lead-in to
-                                    additional
-                                    content.
+                                <p class="card-text">
+                                    Mencatat setiap pengalaman harian dijurnal pribadi.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card text-center mb-3" style="width: 20rem;">
+                        <div class="card h-40">
+                            <div>
+                                <a href=""></a> <i class="bi bi-people h2 p-2 text-drak"></i></i>
+                            </div>
                             <div class="card-body">
-                                <i class="bi bi-people-fill fs-1 text-body-secondary"></i>
                                 <h5 class="card-title">Diskusi</h5>
-                                <p class="card-text text-secondary">With supporting text below as a natural lead-in to
-                                    additional
-                                    content.
+                                <p class="card-text">
+                                    Bertukar ide dengan teman dalam kelompok belajar.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card text-center mb-3" style="width: 20rem;">
+                        <div class="card h-40">
+                            <div>
+                                <a href=""></a> <i class="bi bi-bicycle h2 p-2 text-drak"></i></i>
+                            </div>
                             <div class="card-body">
-                                <i class="bi bi-bicycle fs-1 text-body-secondary"></i>
                                 <h5 class="card-title">Olahraga</h5>
-                                <p class="card-text text-secondary">With supporting text below as a natural lead-in to
-                                    additional
-                                    content.
+                                <p class="card-text">
+                                    Menjaga Kesehatan dengan bersepeda sore hari.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card text-center mb-3" style="width: 20rem;">
+                        <div class="card h-40">
+                            <div>
+                                <a href=""></a> <i class="bi bi-film h2 p-2 text-drak"></i>
+                            </div>
                             <div class="card-body">
-                                <i class="bi bi-film fs-1 text-body-secondary"></i>
                                 <h5 class="card-title">Movie</h5>
-                                <p class="card-text text-secondary">With supporting text below as a natural lead-in to
-                                    additional
-                                    content.
+                                <p class="card-text">
+                                    Menonton film yang bagus di bioskop.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card text-center mb-3" style="width: 20rem;">
+                        <div class="card h-40">
+                            <div>
+                                <a href=""></a> <i class="bi bi-bag h2 p-2 text-drak"></i>
+                            </div>
                             <div class="card-body">
-                                <i class="bi bi-bag fs-1 text-body-secondary"></i>
                                 <h5 class="card-title">Belanja</h5>
-                                <p class="card-text text-secondary">With supporting text below as a natural lead-in to
-                                    additional
-                                    content.
+                                <p class="card-text">
+                                    Membeli kebutuhan bulanan disupermarket.
                                 </p>
                             </div>
                         </div>
