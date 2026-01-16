@@ -30,7 +30,7 @@ $foto = $user['foto'] ?? '';
     <input type="file" name="gantiFoto" id="gantiFoto" class="form-control mb-4 py-2" accept="image/*">
 
     <label>Foto Profile Saat Ini</label><br>
-    <img src="img/<?=$foto !== '' ? $foto : "default_profile.png";?>" id="fotoSaatIni" alt="foto profile saat ini"
+    <img src="img/<?=$foto !== '' ? $foto : "default_profile.jpeg";?>" id="fotoSaatIni" alt="foto profile saat ini"
         style="width:120px;height:120px;object-fit:cover;border-radius:50%;">
 
     <div class="text-center my-3 d-grid">

@@ -21,9 +21,9 @@
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
-                        <th class="w-25">Deskripsi</th>
+                        <th class="w-50">Deskripsi</th>
                         <th class="w-50">Gambar</th>
-                        <th class="w-25">Aksi</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody id="result">

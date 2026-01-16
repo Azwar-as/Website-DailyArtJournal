@@ -1,5 +1,5 @@
 <?php
-                        include "koneksi.php";
+include "koneksi.php";
 
 $keyword = $_POST['keyword'] ?? '' ;
 
@@ -14,9 +14,9 @@ $stmt->execute();
 
 $hasil = $stmt->get_result();
 
-                        $no = 1;
-                        while ($row = $hasil->fetch_assoc()) {
-                    ?>
+$no = 1;
+while ($row = $hasil->fetch_assoc()) {
+?>
 <tr>
     <td><?= $no++ ?></td>
     <td>
@@ -26,12 +26,12 @@ $hasil = $stmt->get_result();
     </td>
     <td>
         <?php
-                                    if ($row["gambar"] != '') {
-                                        if (file_exists('img/' . $row["gambar"] . '')) { 
-                                            echo '<img src="img/' . $row["gambar"] . '" class="img-fluid" alt="Gambar Gallery">'; 
-                                        }
-                                    }
-                                ?>
+            if ($row["gambar"] != '') {
+                if (file_exists('img/' . $row["gambar"] . '')) { 
+                    echo '<img src="img/' . $row["gambar"] . '" class="img-fluid" alt="Gambar Gallery">'; 
+                }
+            }
+        ?>
     </td>
     <td>
         <a href="#" title="edit" class="badge rounded-pill text-bg-success" data-bs-toggle="modal"
