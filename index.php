@@ -18,6 +18,24 @@ include "koneksi.php";
     .accordion-button[style*="var(--bs-body-color)"]::after {
         filter: invert(1) grayscale(100%);
     }
+
+    #carouselExample .carousel-control-prev,
+    #carouselExample .carousel-control-next {
+        width: 10%;
+    }
+
+    #carouselExample .carousel-control-prev-icon,
+    #carouselExample .carousel-control-next-icon {
+        filter: drop-shadow(0 0 6px rgba(0, 0, 0, .8));
+    }
+
+    #carouselExample .carousel-control-prev-icon,
+    #carouselExample .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, .55);
+        border-radius: 999px;
+        padding: 18px;
+        background-size: 60% 60%;
+    }
     </style>
 </head>
 
@@ -153,30 +171,26 @@ include "koneksi.php";
                 <h1 class="fw-bold display-4  pb-3">Gallery</h1>
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="./img/img1.jpg" height="500" class="object-fit-cover d-block w-100"
-                                alt="lukisan dengan judul Tepian ketiadaan">
+                        <?php
+                        $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
+                        $hasil = $conn->query($sql); 
+                        // print_r($hasil);
+                        $first = true;
+                        while ($row = $hasil->fetch_assoc()){
+                            $activeClass = $first ? "active" : "";
+                            $first= false;
+                    ?>
+                        <div class="carousel-item <?= $activeClass ?>">
+                            <img src="<?='img/'.$row["gambar"] ?>" height="500" class="object-fit-cover d-block w-100">
                         </div>
-                        <div class="carousel-item">
-                            <img src="./img/img2.jpg" height="500" class="object-fit-cover d-block w-100"
-                                alt="Lukisan dengan judul Prosesi yang terlupakan ">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./img/img3c.jpg" height="500" class="object-fit-cover d-block w-100"
-                                alt="Lukisan dengan judul Segel Terlarang">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./img/img4.jpg" height="500" class="object-fit-cover d-block w-100"
-                                alt="Lukisan dengan judul Dark Rimba Gotik">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./img/img5.jpg" height="500" class="object-fit-cover d-block w-100"
-                                alt="Lukisan dengan judul Kekacauan batin">
-                        </div>
+                        <?php 
+                        }
+                    ?>
+
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                         data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="carousel-control-prev-icon " aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"

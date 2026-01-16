@@ -1,15 +1,15 @@
 <?php
                         include "koneksi.php";
 
-$keyword = $_POST['keyword'] ?? '';
+$keyword = $_POST['keyword'] ?? '' ;
 
-$sql = "SELECT * FROM articles 
-        WHERE judul LIKE ? OR isi LIKE ? OR tanggal LIKE ? OR username LIKE ?
+$sql = "SELECT * FROM gallery 
+        WHERE judul LIKE ? OR tanggal LIKE ? OR username LIKE ?
         ORDER BY tanggal DESC";
 
 $stmt = $conn->prepare($sql);
 $search = "%" . $keyword . "%";
-$stmt->bind_param("ssss", $search, $search, $search, $search);
+$stmt->bind_param("sss", $search, $search, $search);
 $stmt->execute();
 
 $hasil = $stmt->get_result();
@@ -24,12 +24,11 @@ $hasil = $stmt->get_result();
         <br>pada : <?= $row["tanggal"] ?>
         <br>oleh : <?= $row["username"] ?>
     </td>
-    <td><?= $row["isi"] ?></td>
     <td>
         <?php
                                     if ($row["gambar"] != '') {
                                         if (file_exists('img/' . $row["gambar"] . '')) { 
-                                            echo '<img src="img/' . $row["gambar"] . '" class="img-fluid" alt="Gambar Artikel">'; 
+                                            echo '<img src="img/' . $row["gambar"] . '" class="img-fluid" alt="Gambar Gallery">'; 
                                         }
                                     }
                                 ?>
@@ -45,7 +44,7 @@ $hasil = $stmt->get_result();
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Article</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Gallery</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form method="post" action="" enctype="multipart/form-data">
@@ -54,12 +53,7 @@ $hasil = $stmt->get_result();
                                 <label for="judul" class="form-label">Judul</label>
                                 <input type="hidden" name="id" value="<?= $row["id"] ?>">
                                 <input type="text" class="form-control" name="judul"
-                                    placeholder="Tuliskan Judul Artikel" value="<?= $row["judul"] ?>" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="isi">Isi</label>
-                                <textarea class="form-control" placeholder="Tuliskan Isi Artikel" name="isi"
-                                    required><?= $row["isi"] ?></textarea>
+                                    placeholder="Tuliskan Judul Gallery" value="<?= $row["judul"] ?>" required>
                             </div>
                             <div class="mb-3">
                                 <label for="gambar" class="form-label">Ganti Gambar</label>
@@ -71,7 +65,7 @@ $hasil = $stmt->get_result();
                                 <?php
                         if ($row["gambar"] != '') {
                             if (file_exists('img/' . $row["gambar"] . '')) { 
-                                echo '<br><img src="img/' . $row["gambar"] . '" class="img-fluid" alt="Gambar Artikel">';
+                                echo '<br><img src="img/' . $row["gambar"] . '" class="img-fluid" alt="Gambar Gallery">';
                             }
                         }
                         ?>
@@ -95,14 +89,14 @@ $hasil = $stmt->get_result();
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Konfirmasi Hapus
-                            Article</h1>
+                            Gallery</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form method="post" action="" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Yakin akan
-                                    menghapus artikel
+                                    menghapus gallery
                                     "<strong><?= $row["judul"] ?></strong>"?</label>
                                 <input type="hidden" name="id" value="<?= $row["id"] ?>">
                                 <input type="hidden" name="gambar" value="<?= $row["gambar"] ?>">
